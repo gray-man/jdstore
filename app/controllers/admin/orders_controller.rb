@@ -11,16 +11,18 @@ class Admin::OrdersController < ApplicationController
     @order = Order.find(params[:id])
     @product_lists = @order.product_lists
   end
-  
+
   def ship
     @order = Order.find(params[:id])
     @order.ship!
+    OrderMailer.notify_ship(@order).deliver!
     redirect_to :back
   end
 
   def shipped
     @order = Order.find(params[:id])
     @order.deliver!
+    OrderMailer.notify_ship(@order).deliver!
     redirect_to :back
   end
 
