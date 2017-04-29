@@ -15,3 +15,8 @@ u.password_confirmation = "123456"   # 最少要六码
 
 u.is_admin = true
 u.save
+
+Product.destroy_all
+Product.create(:title => "Apple", :description => "delicious", :quantity => 100)
+
+puts "created a user and a product"

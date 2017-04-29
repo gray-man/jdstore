@@ -42,6 +42,8 @@ gem 'hirb'
 gem 'letter_opener', group: :development
 gem 'aasm'
 
+gem 'acts_as_list' #使用gem来让管理员可以在后台更改商品的排列顺序
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
