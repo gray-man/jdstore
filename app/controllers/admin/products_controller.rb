@@ -4,7 +4,7 @@ class Admin::ProductsController < ApplicationController
   layout "admin"
 
   def index
-    @products = Product.order("postion ASC")
+    @products = Product.order("position ASC")
   end
 
   def new
